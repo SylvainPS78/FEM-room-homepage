@@ -1,59 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover innovative ways to decorate and create a unique interior with our quality furniture collection, blending comfort and style. Worldwide shipping available. Shop now!"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Room homepage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Home
-  Shop
-  About
-  Contact
+    <title>Frontend Mentor | Room homepage</title>
+  </head>
 
-  Discover innovative ways to decorate
+  <body>
+    <header>
+      <button
+        class="navbar-open-button button--show"
+        aria-label="open navebar"
+        aria-expanded="false"
+        aria-controls="mainNavbar"
+      >
+        <svg
+          class="navbar-open-icon"
+          aria-hidden="true"
+          focusablee="false"
+          width="20"
+          height="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
+            fill="#FFF"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <img
+        class="logo"
+        src="./images/logo.svg"
+        alt="ROOM logo"
+        width="62"
+        height="14"
+      />
+      <nav class="navbar" id="mainNavbar">
+        <button
+          class="navbar-close-button button--hide"
+          aria-label="close navbar"
+          aria-expanded="true"
+          aria-controls="mainNavbar"
+        >
+          <svg
+            class="navbar-close-icon"
+            aria-hidden="true"
+            focusablee="false"
+            width="16"
+            height="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
+              fill="#000"
+              fill-rule="evenodd"
+              opacity=".201"
+            />
+          </svg>
+        </button>
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="#">home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#">shop</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#">about</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#">contact</a></li>
+        </ul>
+      </header>
 
-  We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
+    <main></main>
 
-  Shop now
+    <footer></footer>
+    Home Shop About Contact Discover innovative ways to decorate We provide
+    unmatched quality, comfort, and style for property owners across the
+    country. Our experts combine form and function in bringing your vision to
+    life. Create a room in your own style with our collection and make your
+    property a reflection of you and what you love. Shop now We are available
+    all across the globe With stores all over the world, it's easy for you to
+    find furniture for your home or place of business. Locally, we're in most
+    major cities throughout the country. Find the branch nearest you using our
+    store locator. Any questions? Don't hesitate to contact us today. Shop now
+    Manufactured with the best materials Our modern furniture store provide a
+    high level of quality. Our company has invested in advanced technology to
+    ensure that every product is made as perfect and as consistent as possible.
+    With three decades of experience in this industry, we understand what
+    customers want for their home and office. Shop now About our furniture Our
+    multifunctional collection blends design and function to suit your
+    individual taste. Make each room unique, or pick a cohesive theme that best
+    express your interests and what inspires you. Find the furniture pieces you
+    need, from traditional to contemporary styles or anything in between.
+    Product specialists are available to help you create your dream space.
 
-  We are available all across the globe
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
 
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
-
-  Shop now
-
-  Manufactured with the best materials
-
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
-
-  About our furniture
-
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="./js/script.js" defer></script>
+  </body>
 </html>
