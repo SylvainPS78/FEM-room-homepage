@@ -6,6 +6,111 @@
   box-sizing: border-box;
 }
 
+/* TBD */
+/* TBD */
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+html {
+  background-color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 5vw;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 0;
+  padding: 3vh 5vw;
+  position: fixed;
+}
+
+.navbar-open-button {
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* TBD */
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+}
+.hero__image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin-bottom: 3vh;
+}
+.hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 3vh 5vw;
+}
+.hero__description, .hero__about__description {
+  font-weight: 500;
+  color: hsl(0, 0%, 63%);
+  padding: 3vh 5vw;
+  padding-top: 0;
+  line-height: 1.5rem;
+}
+.hero__button {
+  letter-spacing: 0.5em;
+  display: flex;
+  align-self: flex-start;
+  gap: 1rem;
+  padding: 3vh 5vw;
+}
+.hero__about__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 3vh 5vw;
+  align-self: flex-start;
+  letter-spacing: 0.2rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
