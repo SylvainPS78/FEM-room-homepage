@@ -71,7 +71,8 @@
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
+              d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364
+               6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
               fill="#000"
               fill-rule="evenodd"
               opacity=".201"
@@ -86,28 +87,84 @@
         </ul>
     </header>
 
-    <main class="hero">
-      <img
-        class="hero__image"
-        src="./images/mobile-image-hero-1.jpg"
-        alt="A beautiful room with a modern design and furniture"
-        width="375"
-        height="360"
-        >
+    <main class="main">
 
-      <h1 class="hero__title">Discover innovative ways to decorate</h1>
+      <section class="slider">
+        <div class="slider__wrapper">
+          <article class="slider__slide">
+            <img
+            class="slider__image"
+            src="./images/mobile-image-hero-1.jpg"
+            alt="A beautiful room with a modern design and furniture"
+            width="375"
+            height="360"
+            >
 
-      <p class="hero__description">We provide
-        unmatched quality, comfort, and style for property owners across the
-        country. Our experts combine form and function in bringing your vision to
-        life. Create a room in your own style with our collection and make your
-        property a reflection of you and what you love.
-      </p>
+            <h1 class="slider__title">Discover innovative ways to decorate</h1>
 
-      <button class="hero__button">
+            <p class="slider__description">We provide
+              unmatched quality, comfort, and style for property owners across the
+              country. Our experts combine form and function in bringing your vision to
+              life. Create a room in your own style with our collection and make your
+              property a reflection of you and what you love.
+            </p>
+          </article>
+
+          <article class="slider__slide">
+            <img
+              class="slider__image"
+              src="./images/mobile-image-hero-2.jpg"
+              alt="A beautiful set of chairs"
+              width="375"
+              height="360"
+              >
+
+            <h1 class="slider__title">We are available all across the globe</h1>
+
+            <p class="slider__description">With stores all over the world, it's easy for you
+              to find furniture for your home or place of business. Locally, we're in most 
+              major cities throughout the country. Find the branch nearest you using our 
+              store locator. Any questions? Don't hesitate to contact us today.</p>
+          </article>
+
+          <article class="slider__slide">
+            <img
+            class="slider__image"
+            src="./images/mobile-image-hero-3.jpg"
+            alt="A beautiful black metal chair"
+            width="375"
+            height="360"
+            >
+
+            <h1 class="slider__title">Manufactured with the best materials</h1>
+
+            <p class="slider__description">Our modern furniture store provide a high level of 
+              quality. Our company has invested in advanced technology to ensure that every 
+              product is made as perfect and as consistent as possible. With three decades of
+              experience in this industry, we understand what customers want for their home 
+              and office.
+            </p>
+          </div>
+        </article>
+
+        <div class="slider__controls">
+          <button class="slider__button slider__button--prev" aria-label="Previous slide">
+            <svg viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"/>
+            </svg>
+          </button>
+          <button class="slider__button slider__button--next" aria-label="Next slide">
+            <svg viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <button class="main__button">
         SHOP NOW
         <svg
-          class="hero__button__icon"
+          class="main__button__icon"
           aria-hidden="true"
           focusable="false"
           width="40"
@@ -115,7 +172,8 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+            d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 
+            12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
             fill="#000"
             fill-rule="nonzero"
           />
@@ -123,51 +181,37 @@
       </button>
 
       <img
-      class="hero__image"
+      class="main__image"
       src="./images/image-about-dark.jpg"
       alt="Beautiful furniture of a dark living room"
       width="420"
       height="266"
       >
-      <h2 class="hero__about__title">ABOUT OUR FURNITURE</h2>
 
-      <p class="hero__about__description">
-        Our multifunctional collection blends design and function to suit your
-        individual taste. Make each room unique, or pick a cohesive theme that
-        best express your interests and what inspires you. Find the furniture
-        pieces you need, from traditional to contemporary styles or anything in
-        between. Product specialists are available to help you create your dream
-        space.
-      </p>
+      <section class="about">
+        <h2 class="about__title">ABOUT OUR FURNITURE</h2>
+
+        <p class="about__description">
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything in
+          between. Product specialists are available to help you create your dream
+          space.
+        </p>
+      </section>
+
 
       <img
-        class="hero__image"
+        class="main__image"
         src="./images/image-about-light.jpg"
         alt="Beautiful furniture of a light living room"
         width="420"
         height="266"
       >
-
-
-        
-
-
-        We are available
-        all across the globe With stores all over the world, it's easy for you to
-        find furniture for your home or place of business. Locally, we're in most
-        major cities throughout the country. Find the branch nearest you using our
-        store locator. Any questions? Don't hesitate to contact us today. Shop now
-        Manufactured with the best materials Our modern furniture store provide a
-        high level of quality. Our company has invested in advanced technology to
-        ensure that every product is made as perfect and as consistent as possible.
-        With three decades of experience in this industry, we understand what
-        customers want for their home and office.
-
-
     </main>
 
     <footer></footer>
-
 
     <div class="attribution">
       Challenge by
