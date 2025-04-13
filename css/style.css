@@ -23,28 +23,41 @@ a {
 
 html {
   background-color: hsl(0, 0%, 100%);
-  font-size: 16px;
+  color: hsl(0, 0%, 27%);
+  font-size: clamp(16px, 2.5vw + 0.5rem, 25px);
   font-family: "League Spartan", sans-serif;
   font-weight: 500;
+  width: 100vw;
+  min-width: 320px;
+}
+
+body {
+  min-width: 320px;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3vh 5vw;
+  padding: 6vh 5vw;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
+  min-width: 320px;
+}
+
+.logo {
+  width: 16.5vw;
+  height: auto;
 }
 
 .navbar {
   display: flex;
   background-color: hsl(0, 0%, 100%);
   opacity: 0;
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
   position: fixed;
 }
 
@@ -53,6 +66,26 @@ header {
   left: 5vw;
   top: 50%;
   transform: translateY(-50%);
+  width: min(10vw, 60px);
+  height: min(8.66vw, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  color: hsl(0, 0%, 100%);
+}
+.navbar-open-button:hover {
+  color: hsl(0, 0%, 0%);
+}
+.navbar-open-button .navbar-open-icon {
+  width: 60%;
+  height: 60%;
+}
+.navbar-open-button .navbar-open-icon path {
+  stroke-width: clamp(0.2px, 0.05vw, 1.5px);
+  stroke: hsl(0, 0%, 100%);
+  vector-effect: non-scaling-stroke;
+  fill: currentColor;
 }
 
 .navbar-list {
@@ -70,26 +103,49 @@ header {
   justify-content: center;
   position: relative;
   top: 0;
+  width: 100%;
+  min-width: 320px;
 }
 .main__button {
   letter-spacing: 0.5em;
   display: flex;
   align-self: flex-start;
   gap: 1rem;
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
+  color: hsl(0, 0%, 0%);
+  transition: color 0.3s ease;
+  padding-top: 0;
+}
+.main__button:hover {
+  color: hsl(0, 0%, 27%);
+}
+.main__button,
+.main__button svg path {
+  color: hsl(0, 0%, 0%);
+  fill: currentColor;
+}
+.main__image {
+  min-width: 320px;
+  width: 100%;
+  height: auto;
+  margin: 3vh 0;
+}
+.main__image:last-child {
+  margin-bottom: 0;
 }
 
 .about__title {
   font-size: 1.2rem;
   font-weight: 600;
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
   align-self: flex-start;
   letter-spacing: 0.2rem;
+  color: hsl(0, 0%, 0%);
 }
 .about__description {
   font-weight: 500;
   color: hsl(0, 0%, 27%);
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
   padding-top: 0;
   line-height: 1.5rem;
 }
@@ -118,23 +174,25 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  min-width: 320px;
 }
 .slider__title {
   margin-top: 2rem;
   font-size: 2rem;
   font-weight: 700;
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
+  color: hsl(0, 0%, 0%);
 }
 .slider__description {
   font-weight: 500;
   color: hsl(0, 0%, 27%);
-  padding: 3vh 5vw;
+  padding: 3vh 8vw;
   padding-top: 0;
   line-height: 1.5rem;
 }
 .slider__controls {
   position: absolute;
-  top: calc(96vw - min(12vw + 13px, 69px));
+  top: calc(96vw - min(12vw, 56px));
   right: 0;
   display: flex;
   z-index: 10;
@@ -173,5 +231,9 @@ header {
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(0, 0%, 63%);
+}
+
+.attribution--hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

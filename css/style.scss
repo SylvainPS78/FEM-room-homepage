@@ -10,12 +10,13 @@ $dark-gray: hsl(0, 0%, 63%);
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 $very-dark-gray: hsl(0, 0%, 27%);
-$font-size: 16px;
+$font-size: clamp(16px, 2.5vw + 0.5rem, 25px);
 $font-family: "League Spartan", sans-serif;
 $font-weight: 500;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
-$mobile-padding: 3vh 5vw;
+$mobile-padding: 3vh 8vw;
+$mobile-header-padding: 6vh 5vw;
 $mobile-padding-left: 5vw;
 
 ul,
@@ -35,21 +36,34 @@ a {
 
 html {
   background-color: $white;
+  color: $very-dark-gray;
   font-size: $font-size;
   font-family: $font-family;
   font-weight: $font-weight;
+  width: 100vw;
+  min-width: 320px;
+}
+
+body {
+  min-width: 320px;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $mobile-padding;
+  padding: $mobile-header-padding;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
+  min-width: 320px;
+}
+
+.logo {
+  width: 16.5vw;
+  height: auto;
 }
 
 .navbar {
@@ -65,6 +79,29 @@ header {
   left: 5vw;
   top: 50%;
   transform: translateY(-50%);
+  width: min(10vw, 60px);
+  height: min(8.66vw, 52px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  color: $white;
+
+  &:hover {
+    color: $black;
+  }
+
+  .navbar-open-icon {
+    width: 60%;
+    height: 60%;
+
+    path {
+      stroke-width: clamp(0.2px, 0.05vw, 1.5px);
+      stroke: $white;
+      vector-effect: non-scaling-stroke;
+      fill: currentColor;
+    }
+  }
 }
 
 .navbar-list {
@@ -82,6 +119,8 @@ header {
   justify-content: center;
   position: relative;
   top: 0;
+  width: 100%;
+  min-width: 320px;
 
   &__button {
     letter-spacing: 0.5em;
@@ -89,6 +128,30 @@ header {
     align-self: flex-start;
     gap: 1rem;
     padding: $mobile-padding;
+    color: $black;
+    transition: color 0.3s ease;
+    padding-top: 0;
+
+    &:hover {
+      color: $very-dark-gray;
+    }
+
+    &,
+    svg path {
+      color: $black;
+      fill: currentColor;
+    }
+  }
+
+  &__image {
+    min-width: 320px;
+    width: 100%;
+    height: auto;
+    margin: 3vh 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -99,6 +162,7 @@ header {
     padding: $mobile-padding;
     align-self: flex-start;
     letter-spacing: 0.2rem;
+    color: $black;
   }
 
   &__description {
@@ -135,6 +199,7 @@ header {
     max-height: 100vh;
     object-fit: cover;
     display: block;
+    min-width: 320px;
   }
 
   &__title {
@@ -142,6 +207,7 @@ header {
     font-size: 2rem;
     font-weight: $font-weight-bold;
     padding: $mobile-padding;
+    color: $black;
   }
 
   &__description {
@@ -154,7 +220,7 @@ header {
 
   &__controls {
     position: absolute;
-    top: calc((100vw * (360 / 375)) - min(calc(12vw + 13px), 69px));
+    top: calc((100vw * (360 / 375)) - min(12vw, 56px));
     right: 0;
     display: flex;
     z-index: 10;
@@ -197,5 +263,9 @@ header {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: $dark-gray;
+}
+
+.attribution--hidden {
+  display: none;
 }
