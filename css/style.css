@@ -54,11 +54,14 @@ header {
 }
 
 .navbar {
+  width: 100%;
   display: flex;
   background-color: hsl(0, 0%, 100%);
   opacity: 0;
   padding: 3vh 8vw;
   position: fixed;
+  top: 0;
+  transition: opacity 0.3s ease;
 }
 
 .navbar-open-button {
@@ -74,7 +77,7 @@ header {
   transition: color 0.3s ease;
   color: hsl(0, 0%, 100%);
 }
-.navbar-open-button:hover {
+.navbar-open-button:hover, .navbar-open-button:focus {
   color: hsl(0, 0%, 0%);
 }
 .navbar-open-button .navbar-open-icon {
@@ -88,12 +91,41 @@ header {
   fill: currentColor;
 }
 
+.navbar-close-button {
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(9vw, 55px);
+  height: min(9vw, 55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  color: hsl(0, 0%, 27%);
+}
+.navbar-close-button:hover, .navbar-close-button:focus {
+  color: hsl(0, 0%, 0%);
+}
+.navbar-close-button .navbar-close-icon {
+  width: 60%;
+  height: 60%;
+}
+.navbar-close-button .navbar-close-icon path {
+  stroke-width: clamp(0.2px, 0.05vw, 1.5px);
+  vector-effect: non-scaling-stroke;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
 .navbar-list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 0;
+  margin-left: 20vw;
+  width: 100%;
 }
 
 .main {
@@ -116,7 +148,7 @@ header {
   transition: color 0.3s ease;
   padding-top: 0;
 }
-.main__button:hover {
+.main__button:hover, .main__button:focus {
   color: hsl(0, 0%, 27%);
 }
 .main__button,
@@ -208,7 +240,7 @@ header {
   border: none;
   transition: background-color 0.3s ease;
 }
-.slider__button:hover {
+.slider__button:hover, .slider__button:focus {
   background-color: hsl(0, 0%, 27%);
 }
 .slider__button svg {
@@ -221,7 +253,7 @@ header {
   stroke: hsl(0, 0%, 100%);
   vector-effect: non-scaling-stroke;
 }
-.slider__button:hover path {
+.slider__button:hover path, .slider__button:focus path {
   stroke-width: 2px;
 }
 

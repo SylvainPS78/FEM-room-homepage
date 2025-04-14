@@ -54,9 +54,9 @@
         width="62"
         height="14"
       />
-      <nav class="navbar" id="mainNavbar">
+      <nav class="navbar" id="mainNavbar" inert>
         <button
-          class="navbar-close-button button--hide"
+          class="navbar-close-button"
           aria-label="close navbar"
           aria-expanded="true"
           aria-controls="mainNavbar"
@@ -65,8 +65,7 @@
             class="navbar-close-icon"
             aria-hidden="true"
             focusablee="false"
-            width="16"
-            height="16"
+            viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -74,7 +73,6 @@
                6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
               fill="#000"
               fill-rule="evenodd"
-              opacity=".201"
             />
           </svg>
         </button>
@@ -84,6 +82,7 @@
           <li class="navbar-item"><a class="navbar-link" href="#">about</a></li>
           <li class="navbar-item"><a class="navbar-link" href="#">contact</a></li>
         </ul>
+      </nav>
     </header>
 
     <main class="main">

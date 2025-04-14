@@ -29,4 +29,33 @@ const slider = {
   },
 };
 
-document.addEventListener("DOMContentLoaded", () => slider.init());
+const navigation = {
+  navbar: document.querySelector(".navbar"),
+  openButton: document.querySelector(".navbar-open-button"),
+  closeButton: document.querySelector(".navbar-close-button"),
+  isOpen: false,
+
+  init() {
+    this.openButton.addEventListener("click", () => this.open());
+    this.closeButton.addEventListener("click", () => this.close());
+  },
+
+  open() {
+    this.navbar.style.opacity = "1";
+    this.navbar.removeAttribute("inert");
+    this.openButton.setAttribute("aria-expanded", "true");
+    this.isOpen = true;
+  },
+
+  close() {
+    this.navbar.style.opacity = "0";
+    this.navbar.setAttribute("inert", "");
+    this.openButton.setAttribute("aria-expanded", "false");
+    this.isOpen = false;
+  },
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  slider.init();
+  navigation.init();
+});

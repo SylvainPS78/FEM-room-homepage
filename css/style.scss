@@ -67,11 +67,14 @@ header {
 }
 
 .navbar {
+  width: 100%;
   display: flex;
   background-color: $white;
   opacity: 0;
   padding: $mobile-padding;
   position: fixed;
+  top: 0;
+  transition: opacity 0.3s ease;
 }
 
 .navbar-open-button {
@@ -87,7 +90,8 @@ header {
   transition: color 0.3s ease;
   color: $white;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $black;
   }
 
@@ -104,12 +108,45 @@ header {
   }
 }
 
+.navbar-close-button {
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(9vw, 55px);
+  height: min(9vw, 55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  color: $very-dark-gray;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+
+  .navbar-close-icon {
+    width: 60%;
+    height: 60%;
+
+    path {
+      stroke-width: clamp(0.2px, 0.05vw, 1.5px);
+      vector-effect: non-scaling-stroke;
+      fill: currentColor;
+      stroke: currentColor;
+    }
+  }
+}
+
 .navbar-list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 0;
+  margin-left: 20vw;
+  width: 100%;
 }
 
 .main {
@@ -132,7 +169,8 @@ header {
     transition: color 0.3s ease;
     padding-top: 0;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $very-dark-gray;
     }
 
@@ -237,7 +275,8 @@ header {
     border: none;
     transition: background-color 0.3s ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $very-dark-gray;
     }
 
@@ -252,7 +291,8 @@ header {
         vector-effect: non-scaling-stroke;
       }
     }
-    &:hover path {
+    &:hover path,
+    &:focus path {
       stroke-width: 2px;
     }
   }
