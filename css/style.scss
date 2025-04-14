@@ -75,6 +75,34 @@ header {
   position: fixed;
   top: 0;
   transition: opacity 0.3s ease;
+
+  &-link {
+    padding: 0.5rem;
+    outline-offset: 0.15rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background-color: $black;
+      transition: width 0.5s ease;
+    }
+
+    &:hover::after {
+      width: 50%;
+    }
+
+    &:focus {
+      outline: 2px solid $black;
+      outline-offset: 0.15rem;
+      border-radius: 2px;
+    }
+  }
 }
 
 .navbar-open-button {
