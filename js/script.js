@@ -31,6 +31,7 @@ const slider = {
 
 const navigation = {
   navbar: document.querySelector(".navbar"),
+  overlay: document.querySelector(".overlay"),
   openButton: document.querySelector(".navbar-open-button"),
   closeButton: document.querySelector(".navbar-close-button"),
   isOpen: false,
@@ -38,20 +39,27 @@ const navigation = {
   init() {
     this.openButton.addEventListener("click", () => this.open());
     this.closeButton.addEventListener("click", () => this.close());
+    this.overlay.addEventListener("click", () => this.close());
   },
 
   open() {
     this.navbar.style.opacity = "1";
+    this.overlay.classList.add("overlay--active");
     this.navbar.removeAttribute("inert");
+    this.overlay.removeAttribute("inert");
     this.openButton.setAttribute("aria-expanded", "true");
     this.isOpen = true;
+    document.body.style.overflow = "hidden";
   },
 
   close() {
     this.navbar.style.opacity = "0";
+    this.overlay.classList.remove("overlay--active");
     this.navbar.setAttribute("inert", "");
+    this.overlay.setAttribute("inert", "");
     this.openButton.setAttribute("aria-expanded", "false");
     this.isOpen = false;
+    document.body.style.overflow = "";
   },
 };
 
