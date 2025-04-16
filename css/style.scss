@@ -370,23 +370,23 @@ header {
   }
 
   body {
-    height: 100vh; // Ajout pour contraindre la hauteur
-    min-width: 1160px; // Add minimum width
+    height: 100vh;
+    min-width: 1160px;
     overflow-x: auto;
-    min-height: 760px; // Match html minimum height
+    min-height: 760px;
     overflow-y: auto;
-    position: fixed; // Added to prevent scroll
-    width: 100%; // Added to ensure full width
+    position: fixed;
+    width: 100%;
   }
 
   .main {
-    height: 100vh; // Ajout pour contraindre la hauteur
+    height: 100vh;
     min-height: 760px;
     display: grid;
-    grid-template-rows: 66% 34%; // Changed to percentages
+    grid-template-rows: 66% 34%;
     grid-template-columns: repeat(7, 1fr);
     gap: 0;
-    min-width: 1160px; // Add minimum width
+    min-width: 1160px;
     overflow-x: auto;
   }
 
@@ -403,7 +403,7 @@ header {
       width: 300%;
       max-height: 70vh;
       min-height: 500px;
-      display: flex; // Garde flex pour le slider horizontal
+      display: flex;
       transition: transform 0.5s ease-in-out;
     }
 
@@ -416,10 +416,10 @@ header {
       grid-template-columns: 4fr 3fr;
       grid-template-areas:
         "image title"
-        "image description"; // Supprimé shop-button car pas dans la structure
+        "image description";
       grid-template-rows: 2fr 3fr;
       height: 100%;
-      position: relative; // Pour le positionnement du bouton
+      position: relative;
     }
 
     &__image {
@@ -448,10 +448,7 @@ header {
 
     &__controls {
       position: absolute;
-      top: max(
-        444px,
-        calc(66vh - 2.2rem)
-      ); // 70% of viewport height minus controls height
+      top: max(444px, calc(66vh - 2.2rem));
       left: calc(57%);
       display: flex;
       z-index: 10;
@@ -502,15 +499,11 @@ header {
 
   .main__button {
     position: absolute;
-    top: max(
-      375px,
-      calc(56vh - 3rem)
-    ); // 70% of viewport height minus button height
+    top: max(375px, calc(56vh - 3rem));
     left: 61%;
     padding: 0;
   }
 
-  // Desktop Navigation
   .navbar {
     opacity: 1;
     background: transparent;
@@ -554,19 +547,16 @@ header {
     }
   }
 
-  // Hide mobile elements
   .navbar-open-button,
   .navbar-close-button,
   .overlay {
     display: none;
   }
 
-  // Logo adjustments
   .logo {
     width: auto;
   }
 
-  // Header positioning
   header {
     position: absolute;
     top: 1rem;
