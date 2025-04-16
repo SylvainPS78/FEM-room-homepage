@@ -18,6 +18,7 @@ $font-weight-bold: 700;
 $mobile-padding: 3vh 8vw;
 $mobile-header-padding: 6vh 5vw;
 $mobile-padding-left: 5vw;
+$desktop-padding: 1.5vh 4vw;
 
 ul,
 li {
@@ -238,6 +239,7 @@ header {
     padding: $mobile-padding;
     padding-top: 0;
     line-height: 1.5rem;
+    text-align: justify;
   }
 }
 
@@ -283,6 +285,7 @@ header {
     padding: $mobile-padding;
     padding-top: 0;
     line-height: 1.5rem;
+    text-align: justify;
   }
 
   &__controls {
@@ -355,4 +358,223 @@ header {
 
 .attribution--hidden {
   display: none;
+}
+
+@media screen and (min-width: 769px) {
+  html {
+    height: 100vh;
+    min-width: 1160px; // Add minimum width
+    min-height: 760px; // Add minimum height
+    overflow-y: auto; // Allow scroll when needed
+    overflow-x: auto;
+  }
+
+  body {
+    height: 100vh; // Ajout pour contraindre la hauteur
+    min-width: 1160px; // Add minimum width
+    overflow-x: auto;
+    min-height: 760px; // Match html minimum height
+    overflow-y: auto;
+    position: fixed; // Added to prevent scroll
+    width: 100%; // Added to ensure full width
+  }
+
+  .main {
+    height: 100vh; // Ajout pour contraindre la hauteur
+    min-height: 760px;
+    display: grid;
+    grid-template-rows: 66% 34%; // Changed to percentages
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    min-width: 1160px; // Add minimum width
+    overflow-x: auto;
+  }
+
+  .slider {
+    grid-column: 1 / 8;
+    grid-row: 1;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    &__wrapper {
+      height: 100%;
+      width: 300%;
+      max-height: 70vh;
+      min-height: 500px;
+      display: flex; // Garde flex pour le slider horizontal
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &__slide {
+      max-height: 70vh;
+      min-height: 500px;
+      width: 33.333%;
+      flex: 0 0 33.333%;
+      display: grid;
+      grid-template-columns: 4fr 3fr;
+      grid-template-areas:
+        "image title"
+        "image description"; // Supprimé shop-button car pas dans la structure
+      grid-template-rows: 2fr 3fr;
+      height: 100%;
+      position: relative; // Pour le positionnement du bouton
+    }
+
+    &__image {
+      grid-area: image;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__title {
+      grid-area: title;
+      align-self: end;
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding: $desktop-padding;
+    }
+
+    &__description {
+      grid-area: description;
+      align-self: start;
+      font-size: 0.65rem;
+      line-height: 1.6;
+      padding: $desktop-padding;
+    }
+
+    &__controls {
+      position: absolute;
+      top: max(
+        444px,
+        calc(66vh - 2.2rem)
+      ); // 70% of viewport height minus controls height
+      left: calc(57%);
+      display: flex;
+      z-index: 10;
+    }
+  }
+
+  .about {
+    grid-row: 2;
+    grid-column: 3 / 6;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-height: 260px;
+    height: 100%;
+
+    &__title {
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+      padding: $desktop-padding;
+    }
+
+    &__description {
+      font-size: 0.65rem;
+      line-height: 1.6;
+      padding: $desktop-padding;
+      line-height: 1.1rem;
+    }
+  }
+
+  .main__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+
+    &--dark {
+      grid-row: 2;
+      grid-column: 1 / 3;
+    }
+
+    &--light {
+      grid-row: 2;
+      grid-column: 6 / 8;
+    }
+  }
+
+  .main__button {
+    position: absolute;
+    top: max(
+      375px,
+      calc(56vh - 3rem)
+    ); // 70% of viewport height minus button height
+    left: 61%;
+    padding: 0;
+  }
+
+  // Desktop Navigation
+  .navbar {
+    opacity: 1;
+    background: transparent;
+    position: static;
+    width: auto;
+    padding: 0;
+    z-index: 100;
+
+    &-list {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: 2rem;
+    }
+
+    &-link {
+      color: $white;
+      font-size: 1rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background-color: $white;
+        transition: width 0.5s ease;
+      }
+
+      &:hover::after {
+        width: 50%;
+      }
+
+      &:focus {
+        outline: 2px solid $white;
+        outline-offset: 0.15rem;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  // Hide mobile elements
+  .navbar-open-button,
+  .navbar-close-button,
+  .overlay {
+    display: none;
+  }
+
+  // Logo adjustments
+  .logo {
+    width: auto;
+  }
+
+  // Header positioning
+  header {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    z-index: 10;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
